@@ -1,0 +1,13 @@
+syntax="proto3";
+package services;
+
+message SearchRequest{
+    string q=1;//搜索的文字
+}
+message SearchResponse{
+    string text=1;
+}
+
+service CarwlerService{
+    rpc Search(SearchRequest) returns (SearchResponse);
+}
