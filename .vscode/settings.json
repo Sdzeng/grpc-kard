@@ -17,7 +17,7 @@
     "go.formatTool": "goreturns",
     "go.gocodeAutoBuild": false,
     "go.goroot": "C:\\Program Files\\Go",
-    "go.gopath": "C:\\D\\GitRepository\\GoPath",
+    "go.gopath": "C:\\SD\\GitRepository\\GoPath",
     "go.autocompleteUnimportedPackages": true,
     "go.formatOnSave": true,
 
