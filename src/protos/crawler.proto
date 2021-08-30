@@ -2,6 +2,8 @@ syntax="proto3";
 package pbs;
 option go_package ="./;pbs";
 
+import "google/api/annotations.proto";
+
 message SearchRequest{
     string q=1;//搜索的文字
 }
@@ -10,5 +12,10 @@ message SearchResponse{
 }
 
 service CarwlerService{
-    rpc Search(SearchRequest) returns (SearchResponse);
+    rpc Search(SearchRequest) returns (SearchResponse){
+        option (google.api.http)={
+        get:"/v1/srawler/{q}"    
+        };
+
+    }
 }
