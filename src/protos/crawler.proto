@@ -3,6 +3,7 @@ package pbs;
 option go_package ="./;pbs";
 
 import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
 
 message SearchRequest{
     string q=1;//搜索的文字
@@ -11,10 +12,29 @@ message SearchResponse{
     string text=1;
 }
 
+message NewMessage{
+
+int32 id=1;
+google.protobuf.Timestamp time=2;
+}
+message NewRequest{
+    NewMessage nm=1;//搜索的文字
+}
+message NewResponse{
+    string text=1;
+}
+
 service CarwlerService{
     rpc Search(SearchRequest) returns (SearchResponse){
         option (google.api.http)={
         get:"/v1/srawler/{q}"    
+        };
+    }
+
+    rpc New(NewRequest) returns (NewResponse){
+        option (google.api.http)={
+        post:"/v1/srawler/new"
+        body:"nm"
         };
 
     }
