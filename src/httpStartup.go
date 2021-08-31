@@ -13,13 +13,16 @@ import (
 func main() {
 
 	gwmux := runtime.NewServeMux()
-	opt := []grpc.DialOption{}
+	opt := []grpc.DialOption{grpc.WithInsecure(), grpc.WithReturnConnectionError()}
 	err := pbs.RegisterCarwlerServiceHandlerFromEndpoint(context.Background(), gwmux, "localhost:8081", opt)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	httpServer := &http.Server{Addr: "8080", Handler: gwmux}
+	httpServer := &http.Server{Addr: ":9080", Handler: gwmux}
 
-	httpServer.ListenAndServe()
+	err = httpServer.ListenAndServe()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
