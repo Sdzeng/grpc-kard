@@ -13,13 +13,23 @@ import (
 func main() {
 
 	gwmux := runtime.NewServeMux()
+	endPoint := "localhost:8081"
 	opt := []grpc.DialOption{grpc.WithInsecure(), grpc.WithReturnConnectionError()}
-	err := pbs.RegisterCarwlerServiceHandlerFromEndpoint(context.Background(), gwmux, "localhost:8081", opt)
+
+	err := pbs.RegisterCarwlerServiceHandlerFromEndpoint(context.Background(), gwmux, endPoint, opt)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	httpServer := &http.Server{Addr: ":9080", Handler: gwmux}
+	err = pbs.RegisterOCRServiceHandlerFromEndpoint(context.Background(), gwmux, endPoint, opt)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	httpServer := &http.Server{
+		Addr:    ":9080",
+		Handler: gwmux,
+	}
 
 	err = httpServer.ListenAndServe()
 	if err != nil {

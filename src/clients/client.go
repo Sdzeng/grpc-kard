@@ -5,22 +5,44 @@ import (
 	"fmt"
 	"grpc-kard/src/services/pbs"
 	"log"
+	"time"
 
+	"github.com/golang/protobuf/ptypes/timestamp"
 	"google.golang.org/grpc"
 )
 
 func main() {
-	conn, err := grpc.Dial(":8081")
+	opt := []grpc.DialOption{grpc.WithInsecure(), grpc.WithReturnConnectionError()}
+	conn, err := grpc.Dial(":8081", opt...)
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer conn.Close()
 
+	//clients
 	sarwlerClient := pbs.NewCarwlerServiceClient(conn)
-	searchResponse, err := sarwlerClient.Search(context.Background(), &pbs.SearchRequest{Q: "client good!"})
+	ocrClient := pbs.NewOCRServiceClient(conn)
+
+	ctx := context.Background()
+	searchResponse, err := sarwlerClient.Search(ctx, &pbs.SearchRequest{Q: "client good!"})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println(searchResponse)
+	fmt.Println("searchResponse=", searchResponse)
+
+	t := &timestamp.Timestamp{Seconds: time.Now().Unix()}
+	newResponse, err := sarwlerClient.New(ctx, &pbs.NewRequest{Nm: &pbs.NewMessage{Id: 1, Time: t}})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("newResponse=", newResponse)
+
+	videoResponse, err := ocrClient.Recognition(ctx, &pbs.VideoRequest{Video: &pbs.VideoBytes{Bt: []byte("good bytes")}})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("videoResponse=", videoResponse)
 }

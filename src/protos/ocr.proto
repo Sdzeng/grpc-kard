@@ -1,0 +1,27 @@
+syntax="proto3";
+package pbs;
+option go_package ="./;pbs";
+
+import "google/api/annotations.proto";
+
+message VideoBytes{
+    bytes bt=1;
+}
+
+message VideoRequest{
+    VideoBytes video=1;//视频文件
+}
+message VideoResponse{
+    repeated string text=1;//字幕
+}
+
+
+service OCRService{
+    rpc Recognition(VideoRequest) returns (VideoResponse){
+        option (google.api.http)={
+        post:"/v1/ocr/video"
+        body:"video"
+        };
+
+    }
+}
