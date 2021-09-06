@@ -24,4 +24,20 @@ service OCRService{
         };
 
     }
+
+    rpc RecognitionByServerStream(VideoRequest) returns (stream VideoResponse){
+        option (google.api.http)={
+        post:"/v1/ocr/video"
+        body:"video"
+        };
+
+    }
+
+    rpc RecognitionByClientStream(stream VideoRequest) returns (VideoResponse){
+        option (google.api.http)={
+        post:"/v1/ocr/video"
+        body:"video"
+        };
+
+    }
 }

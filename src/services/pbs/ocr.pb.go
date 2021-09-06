@@ -179,14 +179,27 @@ var file_ocr_proto_rawDesc = []byte{
 	0x73, 0x2e, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x42, 0x79, 0x74, 0x65, 0x73, 0x52, 0x05, 0x76, 0x69,
 	0x64, 0x65, 0x6f, 0x22, 0x23, 0x0a, 0x0d, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x65, 0x78, 0x74, 0x18, 0x01, 0x20, 0x03,
-	0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x32, 0x60, 0x0a, 0x0a, 0x4f, 0x43, 0x52, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x52, 0x0a, 0x0b, 0x52, 0x65, 0x63, 0x6f, 0x67, 0x6e,
-	0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x11, 0x2e, 0x70, 0x62, 0x73, 0x2e, 0x56, 0x69, 0x64, 0x65,
-	0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x70, 0x62, 0x73, 0x2e, 0x56,
-	0x69, 0x64, 0x65, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1c, 0x82, 0xd3,
-	0xe4, 0x93, 0x02, 0x16, 0x22, 0x0d, 0x2f, 0x76, 0x31, 0x2f, 0x6f, 0x63, 0x72, 0x2f, 0x76, 0x69,
-	0x64, 0x65, 0x6f, 0x3a, 0x05, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x42, 0x08, 0x5a, 0x06, 0x2e, 0x2f,
-	0x3b, 0x70, 0x62, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x28, 0x09, 0x52, 0x04, 0x74, 0x65, 0x78, 0x74, 0x32, 0xa8, 0x02, 0x0a, 0x0a, 0x4f, 0x43, 0x52,
+	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x52, 0x0a, 0x0b, 0x52, 0x65, 0x63, 0x6f, 0x67,
+	0x6e, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x11, 0x2e, 0x70, 0x62, 0x73, 0x2e, 0x56, 0x69, 0x64,
+	0x65, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x70, 0x62, 0x73, 0x2e,
+	0x56, 0x69, 0x64, 0x65, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1c, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x16, 0x22, 0x0d, 0x2f, 0x76, 0x31, 0x2f, 0x6f, 0x63, 0x72, 0x2f, 0x76,
+	0x69, 0x64, 0x65, 0x6f, 0x3a, 0x05, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x12, 0x62, 0x0a, 0x19, 0x52,
+	0x65, 0x63, 0x6f, 0x67, 0x6e, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x79, 0x53, 0x65, 0x72, 0x76,
+	0x65, 0x72, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x12, 0x11, 0x2e, 0x70, 0x62, 0x73, 0x2e, 0x56,
+	0x69, 0x64, 0x65, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x70, 0x62,
+	0x73, 0x2e, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x1c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x16, 0x22, 0x0d, 0x2f, 0x76, 0x31, 0x2f, 0x6f, 0x63, 0x72,
+	0x2f, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x3a, 0x05, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x30, 0x01, 0x12,
+	0x62, 0x0a, 0x19, 0x52, 0x65, 0x63, 0x6f, 0x67, 0x6e, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x79,
+	0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x12, 0x11, 0x2e, 0x70,
+	0x62, 0x73, 0x2e, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x12, 0x2e, 0x70, 0x62, 0x73, 0x2e, 0x56, 0x69, 0x64, 0x65, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x1c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x16, 0x22, 0x0d, 0x2f, 0x76, 0x31,
+	0x2f, 0x6f, 0x63, 0x72, 0x2f, 0x76, 0x69, 0x64, 0x65, 0x6f, 0x3a, 0x05, 0x76, 0x69, 0x64, 0x65,
+	0x6f, 0x28, 0x01, 0x42, 0x08, 0x5a, 0x06, 0x2e, 0x2f, 0x3b, 0x70, 0x62, 0x73, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -210,9 +223,13 @@ var file_ocr_proto_goTypes = []interface{}{
 var file_ocr_proto_depIdxs = []int32{
 	0, // 0: pbs.VideoRequest.video:type_name -> pbs.VideoBytes
 	1, // 1: pbs.OCRService.Recognition:input_type -> pbs.VideoRequest
-	2, // 2: pbs.OCRService.Recognition:output_type -> pbs.VideoResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
+	1, // 2: pbs.OCRService.RecognitionByServerStream:input_type -> pbs.VideoRequest
+	1, // 3: pbs.OCRService.RecognitionByClientStream:input_type -> pbs.VideoRequest
+	2, // 4: pbs.OCRService.Recognition:output_type -> pbs.VideoResponse
+	2, // 5: pbs.OCRService.RecognitionByServerStream:output_type -> pbs.VideoResponse
+	2, // 6: pbs.OCRService.RecognitionByClientStream:output_type -> pbs.VideoResponse
+	4, // [4:7] is the sub-list for method output_type
+	1, // [1:4] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -294,6 +311,8 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type OCRServiceClient interface {
 	Recognition(ctx context.Context, in *VideoRequest, opts ...grpc.CallOption) (*VideoResponse, error)
+	RecognitionByServerStream(ctx context.Context, in *VideoRequest, opts ...grpc.CallOption) (OCRService_RecognitionByServerStreamClient, error)
+	RecognitionByClientStream(ctx context.Context, opts ...grpc.CallOption) (OCRService_RecognitionByClientStreamClient, error)
 }
 
 type oCRServiceClient struct {
@@ -313,9 +332,77 @@ func (c *oCRServiceClient) Recognition(ctx context.Context, in *VideoRequest, op
 	return out, nil
 }
 
+func (c *oCRServiceClient) RecognitionByServerStream(ctx context.Context, in *VideoRequest, opts ...grpc.CallOption) (OCRService_RecognitionByServerStreamClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_OCRService_serviceDesc.Streams[0], "/pbs.OCRService/RecognitionByServerStream", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &oCRServiceRecognitionByServerStreamClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type OCRService_RecognitionByServerStreamClient interface {
+	Recv() (*VideoResponse, error)
+	grpc.ClientStream
+}
+
+type oCRServiceRecognitionByServerStreamClient struct {
+	grpc.ClientStream
+}
+
+func (x *oCRServiceRecognitionByServerStreamClient) Recv() (*VideoResponse, error) {
+	m := new(VideoResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *oCRServiceClient) RecognitionByClientStream(ctx context.Context, opts ...grpc.CallOption) (OCRService_RecognitionByClientStreamClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_OCRService_serviceDesc.Streams[1], "/pbs.OCRService/RecognitionByClientStream", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &oCRServiceRecognitionByClientStreamClient{stream}
+	return x, nil
+}
+
+type OCRService_RecognitionByClientStreamClient interface {
+	Send(*VideoRequest) error
+	CloseAndRecv() (*VideoResponse, error)
+	grpc.ClientStream
+}
+
+type oCRServiceRecognitionByClientStreamClient struct {
+	grpc.ClientStream
+}
+
+func (x *oCRServiceRecognitionByClientStreamClient) Send(m *VideoRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *oCRServiceRecognitionByClientStreamClient) CloseAndRecv() (*VideoResponse, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(VideoResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // OCRServiceServer is the server API for OCRService service.
 type OCRServiceServer interface {
 	Recognition(context.Context, *VideoRequest) (*VideoResponse, error)
+	RecognitionByServerStream(*VideoRequest, OCRService_RecognitionByServerStreamServer) error
+	RecognitionByClientStream(OCRService_RecognitionByClientStreamServer) error
 }
 
 // UnimplementedOCRServiceServer can be embedded to have forward compatible implementations.
@@ -324,6 +411,12 @@ type UnimplementedOCRServiceServer struct {
 
 func (*UnimplementedOCRServiceServer) Recognition(context.Context, *VideoRequest) (*VideoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Recognition not implemented")
+}
+func (*UnimplementedOCRServiceServer) RecognitionByServerStream(*VideoRequest, OCRService_RecognitionByServerStreamServer) error {
+	return status.Errorf(codes.Unimplemented, "method RecognitionByServerStream not implemented")
+}
+func (*UnimplementedOCRServiceServer) RecognitionByClientStream(OCRService_RecognitionByClientStreamServer) error {
+	return status.Errorf(codes.Unimplemented, "method RecognitionByClientStream not implemented")
 }
 
 func RegisterOCRServiceServer(s *grpc.Server, srv OCRServiceServer) {
@@ -348,6 +441,53 @@ func _OCRService_Recognition_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OCRService_RecognitionByServerStream_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(VideoRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(OCRServiceServer).RecognitionByServerStream(m, &oCRServiceRecognitionByServerStreamServer{stream})
+}
+
+type OCRService_RecognitionByServerStreamServer interface {
+	Send(*VideoResponse) error
+	grpc.ServerStream
+}
+
+type oCRServiceRecognitionByServerStreamServer struct {
+	grpc.ServerStream
+}
+
+func (x *oCRServiceRecognitionByServerStreamServer) Send(m *VideoResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _OCRService_RecognitionByClientStream_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(OCRServiceServer).RecognitionByClientStream(&oCRServiceRecognitionByClientStreamServer{stream})
+}
+
+type OCRService_RecognitionByClientStreamServer interface {
+	SendAndClose(*VideoResponse) error
+	Recv() (*VideoRequest, error)
+	grpc.ServerStream
+}
+
+type oCRServiceRecognitionByClientStreamServer struct {
+	grpc.ServerStream
+}
+
+func (x *oCRServiceRecognitionByClientStreamServer) SendAndClose(m *VideoResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *oCRServiceRecognitionByClientStreamServer) Recv() (*VideoRequest, error) {
+	m := new(VideoRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _OCRService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "pbs.OCRService",
 	HandlerType: (*OCRServiceServer)(nil),
@@ -357,6 +497,17 @@ var _OCRService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _OCRService_Recognition_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "RecognitionByServerStream",
+			Handler:       _OCRService_RecognitionByServerStream_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "RecognitionByClientStream",
+			Handler:       _OCRService_RecognitionByClientStream_Handler,
+			ClientStreams: true,
+		},
+	},
 	Metadata: "ocr.proto",
 }

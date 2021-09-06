@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"grpc-kard/src/services/pbs"
+	"io"
 	"log"
 	"time"
 
@@ -45,4 +46,41 @@ func main() {
 	}
 
 	fmt.Println("videoResponse=", videoResponse)
+
+	//server stream
+	stream, err := ocrClient.RecognitionByServerStream(ctx, &pbs.VideoRequest{Video: &pbs.VideoBytes{Bt: []byte("good bytes")}})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for {
+		res, err := stream.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		fmt.Println(res.Text)
+	}
+
+	//client stream
+	stream2, err := ocrClient.RecognitionByClientStream(ctx)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = stream2.Send(&pbs.VideoRequest{Video: &pbs.VideoBytes{Bt: []byte("good bytes")}})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	res2, err := stream2.CloseAndRecv()
+	if err != nil {
+		log.Fatal(err)
+	} else {
+		fmt.Println(res2)
+	}
+
 }
