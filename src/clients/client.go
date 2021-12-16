@@ -40,6 +40,7 @@ func main() {
 
 	fmt.Println("newResponse=", newResponse)
 
+	//普通模式
 	videoResponse, err := ocrClient.Recognition(ctx, &pbs.VideoRequest{Video: &pbs.VideoBytes{Bt: []byte("good bytes")}})
 	if err != nil {
 		log.Fatal(err)
@@ -47,7 +48,7 @@ func main() {
 
 	fmt.Println("videoResponse=", videoResponse)
 
-	//server stream
+	//服务端流模式
 	stream, err := ocrClient.RecognitionByServerStream(ctx, &pbs.VideoRequest{Video: &pbs.VideoBytes{Bt: []byte("good bytes")}})
 	if err != nil {
 		log.Fatal(err)
@@ -65,7 +66,7 @@ func main() {
 		fmt.Println(res.Text)
 	}
 
-	//client stream
+	//客户端流模式
 	stream2, err := ocrClient.RecognitionByClientStream(ctx)
 	if err != nil {
 		log.Fatal(err)

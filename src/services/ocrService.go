@@ -10,10 +10,12 @@ import (
 
 type OCRService struct{}
 
+//普通方式
 func (obj OCRService) Recognition(ctx context.Context, request *pbs.VideoRequest) (*pbs.VideoResponse, error) {
 	return &pbs.VideoResponse{Text: []string{"字幕1 " + string(request.Video.Bt)}}, nil
 }
 
+//服务端流模式
 func (obj OCRService) RecognitionByServerStream(request *pbs.VideoRequest, stream pbs.OCRService_RecognitionByServerStreamServer) error {
 
 	textArr := make([]string, 0)
@@ -39,6 +41,7 @@ func (obj OCRService) RecognitionByServerStream(request *pbs.VideoRequest, strea
 	return nil
 }
 
+//客户端流模式
 func (obj OCRService) RecognitionByClientStream(stream pbs.OCRService_RecognitionByClientStreamServer) error {
 
 	textArr := make([]string, 0)
