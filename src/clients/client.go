@@ -6,6 +6,7 @@ import (
 	"grpc-kard/src/services/pbs"
 	"io"
 	"log"
+	"strconv"
 	"time"
 
 	"github.com/golang/protobuf/ptypes/timestamp"
@@ -72,9 +73,14 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = stream2.Send(&pbs.VideoRequest{Video: &pbs.VideoBytes{Bt: []byte("good bytes")}})
-	if err != nil {
-		log.Fatal(err)
+	for i := 0; i < 10; i++ {
+		bytes := []byte("good bytes " + strconv.Itoa(i))
+		video := &pbs.VideoBytes{Bt: bytes}
+
+		err = stream2.Send(&pbs.VideoRequest{Video: video})
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	res2, err := stream2.CloseAndRecv()
@@ -82,6 +88,32 @@ func main() {
 		log.Fatal(err)
 	} else {
 		fmt.Println(res2)
+	}
+
+	//双向流模式
+	stream3, err := ocrClient.RecognitionByTWStream(ctx)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for i := 0; i < 10; i++ {
+		bytes := []byte("good bytes " + strconv.Itoa(i))
+		video := &pbs.VideoBytes{Bt: bytes}
+
+		err = stream3.Send(&pbs.VideoRequest{Video: video})
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		res, err := stream3.Recv()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Fatal(err)
+		} else {
+			fmt.Println(res.Text)
+		}
 	}
 
 }

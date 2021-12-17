@@ -19,7 +19,7 @@ message VideoResponse{
 service OCRService{
     rpc Recognition(VideoRequest) returns (VideoResponse){
         option (google.api.http)={
-        post:"/v1/ocr/video"
+        post:"/v1/ocr/recognition"
         body:"video"
         };
 
@@ -27,17 +27,22 @@ service OCRService{
 
     rpc RecognitionByServerStream(VideoRequest) returns (stream VideoResponse){
         option (google.api.http)={
-        post:"/v1/ocr/video"
+        post:"/v1/ocr/recognition_by_server_stream"
         body:"video"
         };
-
     }
 
     rpc RecognitionByClientStream(stream VideoRequest) returns (VideoResponse){
         option (google.api.http)={
-        post:"/v1/ocr/video"
+        post:"/v1/ocr/recognition_by_client_stream"
         body:"video"
         };
+    }
 
+    rpc RecognitionByTWStream(stream VideoRequest) returns (stream VideoResponse){
+        option (google.api.http)={
+        post:"/v1/ocr/recognition_by_tw_stream"
+        body:"video"
+        };
     }
 }

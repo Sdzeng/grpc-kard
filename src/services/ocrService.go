@@ -58,3 +58,26 @@ func (obj OCRService) RecognitionByClientStream(stream pbs.OCRService_Recognitio
 	}
 
 }
+
+//双向流模式
+func (obj OCRService) RecognitionByTWStream(stream pbs.OCRService_RecognitionByTWStreamServer) error {
+	i := 1
+	for {
+		_, err := stream.Recv()
+		if err == io.EOF {
+
+			return nil
+		}
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		textArr := []string{"text " + strconv.Itoa(i)}
+		i++
+
+		err = stream.Send(&pbs.VideoResponse{Text: textArr})
+		if err != nil {
+			log.Println(err)
+		}
+	}
+}
